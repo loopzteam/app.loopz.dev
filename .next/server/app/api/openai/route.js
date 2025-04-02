@@ -40,7 +40,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   POST: () => (/* binding */ POST)\n/* harmony export */ });\n/* harmony import */ var next_server__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next/server */ \"(rsc)/./node_modules/next/dist/api/server.js\");\n/* harmony import */ var openai__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! openai */ \"(rsc)/./node_modules/openai/index.mjs\");\n\n\nconst openai = new openai__WEBPACK_IMPORTED_MODULE_1__[\"default\"]({\n    apiKey: process.env.OPENAI_API_KEY\n});\nasync function POST(request) {\n    const { prompt } = await request.json();\n    const completion = await openai.chat.completions.create({\n        messages: [\n            {\n                role: 'user',\n                content: prompt\n            }\n        ],\n        model: 'gpt-4-turbo'\n    });\n    return next_server__WEBPACK_IMPORTED_MODULE_0__.NextResponse.json({\n        response: completion.choices[0].message.content\n    });\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9zcmMvYXBwL2FwaS9vcGVuYWkvcm91dGUudHMiLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQXdEO0FBQzVCO0FBRTVCLE1BQU1FLFNBQVMsSUFBSUQsOENBQU1BLENBQUM7SUFDeEJFLFFBQVFDLFFBQVFDLEdBQUcsQ0FBQ0MsY0FBYztBQUNwQztBQUVPLGVBQWVDLEtBQUtDLE9BQW9CO0lBQzdDLE1BQU0sRUFBRUMsTUFBTSxFQUFFLEdBQUcsTUFBTUQsUUFBUUUsSUFBSTtJQUVyQyxNQUFNQyxhQUFhLE1BQU1ULE9BQU9VLElBQUksQ0FBQ0MsV0FBVyxDQUFDQyxNQUFNLENBQUM7UUFDdERDLFVBQVU7WUFBQztnQkFBRUMsTUFBTTtnQkFBUUMsU0FBU1I7WUFBTztTQUFFO1FBQzdDUyxPQUFPO0lBQ1Q7SUFFQSxPQUFPbEIscURBQVlBLENBQUNVLElBQUksQ0FBQztRQUFFUyxVQUFVUixXQUFXUyxPQUFPLENBQUMsRUFBRSxDQUFDQyxPQUFPLENBQUNKLE9BQU87SUFBQztBQUM3RSIsInNvdXJjZXMiOlsiL1VzZXJzL3J5YW5jYWxsaW5hbi9Eb2N1bWVudHMvYXBwLmxvb3B6LmRldiAvc3JjL2FwcC9hcGkvb3BlbmFpL3JvdXRlLnRzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IE5leHRSZXF1ZXN0LCBOZXh0UmVzcG9uc2UgfSBmcm9tICduZXh0L3NlcnZlcic7XG5pbXBvcnQgT3BlbkFJIGZyb20gJ29wZW5haSc7XG5cbmNvbnN0IG9wZW5haSA9IG5ldyBPcGVuQUkoe1xuICBhcGlLZXk6IHByb2Nlc3MuZW52Lk9QRU5BSV9BUElfS0VZLFxufSk7XG5cbmV4cG9ydCBhc3luYyBmdW5jdGlvbiBQT1NUKHJlcXVlc3Q6IE5leHRSZXF1ZXN0KSB7XG4gIGNvbnN0IHsgcHJvbXB0IH0gPSBhd2FpdCByZXF1ZXN0Lmpzb24oKTtcblxuICBjb25zdCBjb21wbGV0aW9uID0gYXdhaXQgb3BlbmFpLmNoYXQuY29tcGxldGlvbnMuY3JlYXRlKHtcbiAgICBtZXNzYWdlczogW3sgcm9sZTogJ3VzZXInLCBjb250ZW50OiBwcm9tcHQgfV0sXG4gICAgbW9kZWw6ICdncHQtNC10dXJibycsXG4gIH0pO1xuXG4gIHJldHVybiBOZXh0UmVzcG9uc2UuanNvbih7IHJlc3BvbnNlOiBjb21wbGV0aW9uLmNob2ljZXNbMF0ubWVzc2FnZS5jb250ZW50IH0pO1xufSJdLCJuYW1lcyI6WyJOZXh0UmVzcG9uc2UiLCJPcGVuQUkiLCJvcGVuYWkiLCJhcGlLZXkiLCJwcm9jZXNzIiwiZW52IiwiT1BFTkFJX0FQSV9LRVkiLCJQT1NUIiwicmVxdWVzdCIsInByb21wdCIsImpzb24iLCJjb21wbGV0aW9uIiwiY2hhdCIsImNvbXBsZXRpb25zIiwiY3JlYXRlIiwibWVzc2FnZXMiLCJyb2xlIiwiY29udGVudCIsIm1vZGVsIiwicmVzcG9uc2UiLCJjaG9pY2VzIiwibWVzc2FnZSJdLCJpZ25vcmVMaXN0IjpbXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(rsc)/./src/app/api/openai/route.ts\n");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   POST: () => (/* binding */ POST)\n/* harmony export */ });\n/* harmony import */ var next_server__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next/server */ \"(rsc)/./node_modules/next/dist/api/server.js\");\n/* harmony import */ var openai__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! openai */ \"(rsc)/./node_modules/openai/index.mjs\");\n/* harmony import */ var _supabase_supabase_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @supabase/supabase-js */ \"(rsc)/./node_modules/@supabase/supabase-js/dist/module/index.js\");\n\n\n\nconst openai = new openai__WEBPACK_IMPORTED_MODULE_1__[\"default\"]({\n    apiKey: process.env.OPENAI_API_KEY\n});\nconst supabase = (0,_supabase_supabase_js__WEBPACK_IMPORTED_MODULE_2__.createClient)(\"https://pajonxonhygrdbcxtcup.supabase.co\", \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBham9ueG9uaHlncmRiY3h0Y3VwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDM2MDkwNDMsImV4cCI6MjA1OTE4NTA0M30.SA9SXSvjSc5mz52U2bSQhZ56FwnZCROj8Nwq7S2it4Y\");\nasync function POST(request) {\n    try {\n        const { thought } = await request.json();\n        const completion = await openai.chat.completions.create({\n            messages: [\n                {\n                    role: 'user',\n                    content: thought\n                }\n            ],\n            model: 'gpt-3.5-turbo'\n        });\n        const aiResponse = completion.choices[0].message.content;\n        // Insert loop into Supabase (using table name \"loopz\")\n        const { data, error } = await supabase.from('loopz').insert({\n            user_thought: thought,\n            ai_reflection: aiResponse\n        });\n        if (error) {\n            console.error(\"Supabase Error:\", error);\n            return next_server__WEBPACK_IMPORTED_MODULE_0__.NextResponse.json({\n                error: \"Database Error\",\n                details: error\n            }, {\n                status: 500\n            });\n        }\n        return next_server__WEBPACK_IMPORTED_MODULE_0__.NextResponse.json({\n            response: aiResponse\n        });\n    } catch (error) {\n        console.error(\"Error calling OpenAI:\", error);\n        return next_server__WEBPACK_IMPORTED_MODULE_0__.NextResponse.json({\n            error: \"Internal Server Error\",\n            details: error\n        }, {\n            status: 500\n        });\n    }\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9zcmMvYXBwL2FwaS9vcGVuYWkvcm91dGUudHMiLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUF3RDtBQUM1QjtBQUN5QjtBQUVyRCxNQUFNRyxTQUFTLElBQUlGLDhDQUFNQSxDQUFDO0lBQ3hCRyxRQUFRQyxRQUFRQyxHQUFHLENBQUNDLGNBQWM7QUFDcEM7QUFFQSxNQUFNQyxXQUFXTixtRUFBWUEsQ0FDM0JHLDBDQUFvQyxFQUNwQ0Esa05BQXlDO0FBR3BDLGVBQWVNLEtBQUtDLE9BQW9CO0lBQzdDLElBQUk7UUFDRixNQUFNLEVBQUVDLE9BQU8sRUFBRSxHQUFHLE1BQU1ELFFBQVFFLElBQUk7UUFFdEMsTUFBTUMsYUFBYSxNQUFNWixPQUFPYSxJQUFJLENBQUNDLFdBQVcsQ0FBQ0MsTUFBTSxDQUFDO1lBQ3REQyxVQUFVO2dCQUFDO29CQUFFQyxNQUFNO29CQUFRQyxTQUFTUjtnQkFBUTthQUFFO1lBQzlDUyxPQUFPO1FBQ1Q7UUFFQSxNQUFNQyxhQUFhUixXQUFXUyxPQUFPLENBQUMsRUFBRSxDQUFDQyxPQUFPLENBQUNKLE9BQU87UUFFeEQsdURBQXVEO1FBQ3ZELE1BQU0sRUFBRUssSUFBSSxFQUFFQyxLQUFLLEVBQUUsR0FBRyxNQUFNbkIsU0FBU29CLElBQUksQ0FBQyxTQUFTQyxNQUFNLENBQUM7WUFDMURDLGNBQWNqQjtZQUNka0IsZUFBZVI7UUFDakI7UUFFQSxJQUFJSSxPQUFPO1lBQ1RLLFFBQVFMLEtBQUssQ0FBQyxtQkFBbUJBO1lBQ2pDLE9BQU8zQixxREFBWUEsQ0FBQ2MsSUFBSSxDQUFDO2dCQUFFYSxPQUFPO2dCQUFrQk0sU0FBU047WUFBTSxHQUFHO2dCQUFFTyxRQUFRO1lBQUk7UUFDdEY7UUFFQSxPQUFPbEMscURBQVlBLENBQUNjLElBQUksQ0FBQztZQUFFcUIsVUFBVVo7UUFBVztJQUNsRCxFQUFFLE9BQU9JLE9BQU87UUFDZEssUUFBUUwsS0FBSyxDQUFDLHlCQUF5QkE7UUFDdkMsT0FBTzNCLHFEQUFZQSxDQUFDYyxJQUFJLENBQUM7WUFBRWEsT0FBTztZQUF5Qk0sU0FBU047UUFBTSxHQUFHO1lBQUVPLFFBQVE7UUFBSTtJQUM3RjtBQUNGIiwic291cmNlcyI6WyIvVXNlcnMvcnlhbmNhbGxpbmFuL0RvY3VtZW50cy9hcHAubG9vcHouZGV2IC9zcmMvYXBwL2FwaS9vcGVuYWkvcm91dGUudHMiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgTmV4dFJlcXVlc3QsIE5leHRSZXNwb25zZSB9IGZyb20gJ25leHQvc2VydmVyJztcbmltcG9ydCBPcGVuQUkgZnJvbSAnb3BlbmFpJztcbmltcG9ydCB7IGNyZWF0ZUNsaWVudCB9IGZyb20gJ0BzdXBhYmFzZS9zdXBhYmFzZS1qcyc7XG5cbmNvbnN0IG9wZW5haSA9IG5ldyBPcGVuQUkoe1xuICBhcGlLZXk6IHByb2Nlc3MuZW52Lk9QRU5BSV9BUElfS0VZLFxufSk7XG5cbmNvbnN0IHN1cGFiYXNlID0gY3JlYXRlQ2xpZW50KFxuICBwcm9jZXNzLmVudi5ORVhUX1BVQkxJQ19TVVBBQkFTRV9VUkwhLFxuICBwcm9jZXNzLmVudi5ORVhUX1BVQkxJQ19TVVBBQkFTRV9BTk9OX0tFWSFcbik7XG5cbmV4cG9ydCBhc3luYyBmdW5jdGlvbiBQT1NUKHJlcXVlc3Q6IE5leHRSZXF1ZXN0KSB7XG4gIHRyeSB7XG4gICAgY29uc3QgeyB0aG91Z2h0IH0gPSBhd2FpdCByZXF1ZXN0Lmpzb24oKTtcblxuICAgIGNvbnN0IGNvbXBsZXRpb24gPSBhd2FpdCBvcGVuYWkuY2hhdC5jb21wbGV0aW9ucy5jcmVhdGUoe1xuICAgICAgbWVzc2FnZXM6IFt7IHJvbGU6ICd1c2VyJywgY29udGVudDogdGhvdWdodCB9XSxcbiAgICAgIG1vZGVsOiAnZ3B0LTMuNS10dXJibycsIC8vIFN0YXlpbmcgbGVhbiBmb3Igbm93XG4gICAgfSk7XG5cbiAgICBjb25zdCBhaVJlc3BvbnNlID0gY29tcGxldGlvbi5jaG9pY2VzWzBdLm1lc3NhZ2UuY29udGVudDtcblxuICAgIC8vIEluc2VydCBsb29wIGludG8gU3VwYWJhc2UgKHVzaW5nIHRhYmxlIG5hbWUgXCJsb29welwiKVxuICAgIGNvbnN0IHsgZGF0YSwgZXJyb3IgfSA9IGF3YWl0IHN1cGFiYXNlLmZyb20oJ2xvb3B6JykuaW5zZXJ0KHtcbiAgICAgIHVzZXJfdGhvdWdodDogdGhvdWdodCxcbiAgICAgIGFpX3JlZmxlY3Rpb246IGFpUmVzcG9uc2UsXG4gICAgfSk7XG5cbiAgICBpZiAoZXJyb3IpIHtcbiAgICAgIGNvbnNvbGUuZXJyb3IoXCJTdXBhYmFzZSBFcnJvcjpcIiwgZXJyb3IpO1xuICAgICAgcmV0dXJuIE5leHRSZXNwb25zZS5qc29uKHsgZXJyb3I6IFwiRGF0YWJhc2UgRXJyb3JcIiwgZGV0YWlsczogZXJyb3IgfSwgeyBzdGF0dXM6IDUwMCB9KTtcbiAgICB9XG5cbiAgICByZXR1cm4gTmV4dFJlc3BvbnNlLmpzb24oeyByZXNwb25zZTogYWlSZXNwb25zZSB9KTtcbiAgfSBjYXRjaCAoZXJyb3IpIHtcbiAgICBjb25zb2xlLmVycm9yKFwiRXJyb3IgY2FsbGluZyBPcGVuQUk6XCIsIGVycm9yKTtcbiAgICByZXR1cm4gTmV4dFJlc3BvbnNlLmpzb24oeyBlcnJvcjogXCJJbnRlcm5hbCBTZXJ2ZXIgRXJyb3JcIiwgZGV0YWlsczogZXJyb3IgfSwgeyBzdGF0dXM6IDUwMCB9KTtcbiAgfVxufSJdLCJuYW1lcyI6WyJOZXh0UmVzcG9uc2UiLCJPcGVuQUkiLCJjcmVhdGVDbGllbnQiLCJvcGVuYWkiLCJhcGlLZXkiLCJwcm9jZXNzIiwiZW52IiwiT1BFTkFJX0FQSV9LRVkiLCJzdXBhYmFzZSIsIk5FWFRfUFVCTElDX1NVUEFCQVNFX1VSTCIsIk5FWFRfUFVCTElDX1NVUEFCQVNFX0FOT05fS0VZIiwiUE9TVCIsInJlcXVlc3QiLCJ0aG91Z2h0IiwianNvbiIsImNvbXBsZXRpb24iLCJjaGF0IiwiY29tcGxldGlvbnMiLCJjcmVhdGUiLCJtZXNzYWdlcyIsInJvbGUiLCJjb250ZW50IiwibW9kZWwiLCJhaVJlc3BvbnNlIiwiY2hvaWNlcyIsIm1lc3NhZ2UiLCJkYXRhIiwiZXJyb3IiLCJmcm9tIiwiaW5zZXJ0IiwidXNlcl90aG91Z2h0IiwiYWlfcmVmbGVjdGlvbiIsImNvbnNvbGUiLCJkZXRhaWxzIiwic3RhdHVzIiwicmVzcG9uc2UiXSwiaWdub3JlTGlzdCI6W10sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///(rsc)/./src/app/api/openai/route.ts\n");
 
 /***/ }),
 
@@ -87,6 +87,39 @@ module.exports = require("next/dist/server/app-render/work-unit-async-storage.ex
 
 /***/ }),
 
+/***/ "buffer":
+/*!*************************!*\
+  !*** external "buffer" ***!
+  \*************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("buffer");
+
+/***/ }),
+
+/***/ "crypto":
+/*!*************************!*\
+  !*** external "crypto" ***!
+  \*************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("crypto");
+
+/***/ }),
+
+/***/ "events":
+/*!*************************!*\
+  !*** external "events" ***!
+  \*************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("events");
+
+/***/ }),
+
 /***/ "fs":
 /*!*********************!*\
   !*** external "fs" ***!
@@ -117,6 +150,17 @@ module.exports = require("http");
 
 "use strict";
 module.exports = require("https");
+
+/***/ }),
+
+/***/ "net":
+/*!**********************!*\
+  !*** external "net" ***!
+  \**********************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("net");
 
 /***/ }),
 
@@ -208,6 +252,17 @@ module.exports = require("stream");
 
 /***/ }),
 
+/***/ "tls":
+/*!**********************!*\
+  !*** external "tls" ***!
+  \**********************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("tls");
+
+/***/ }),
+
 /***/ "url":
 /*!**********************!*\
   !*** external "url" ***!
@@ -259,7 +314,7 @@ module.exports = require("zlib");
 var __webpack_require__ = require("../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, ["vendor-chunks/next","vendor-chunks/formdata-node","vendor-chunks/openai","vendor-chunks/form-data-encoder","vendor-chunks/whatwg-url","vendor-chunks/agentkeepalive","vendor-chunks/tr46","vendor-chunks/web-streams-polyfill","vendor-chunks/node-fetch","vendor-chunks/webidl-conversions","vendor-chunks/ms","vendor-chunks/humanize-ms","vendor-chunks/event-target-shim","vendor-chunks/abort-controller"], () => (__webpack_exec__("(rsc)/./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2Fapi%2Fopenai%2Froute&page=%2Fapi%2Fopenai%2Froute&appPaths=&pagePath=private-next-app-dir%2Fapi%2Fopenai%2Froute.ts&appDir=%2FUsers%2Fryancallinan%2FDocuments%2Fapp.loopz.dev%20%2Fsrc%2Fapp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=%2FUsers%2Fryancallinan%2FDocuments%2Fapp.loopz.dev%20&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!")));
+var __webpack_exports__ = __webpack_require__.X(0, ["vendor-chunks/next","vendor-chunks/formdata-node","vendor-chunks/openai","vendor-chunks/@supabase","vendor-chunks/form-data-encoder","vendor-chunks/whatwg-url","vendor-chunks/agentkeepalive","vendor-chunks/tr46","vendor-chunks/web-streams-polyfill","vendor-chunks/node-fetch","vendor-chunks/webidl-conversions","vendor-chunks/ms","vendor-chunks/humanize-ms","vendor-chunks/event-target-shim","vendor-chunks/abort-controller"], () => (__webpack_exec__("(rsc)/./node_modules/next/dist/build/webpack/loaders/next-app-loader/index.js?name=app%2Fapi%2Fopenai%2Froute&page=%2Fapi%2Fopenai%2Froute&appPaths=&pagePath=private-next-app-dir%2Fapi%2Fopenai%2Froute.ts&appDir=%2FUsers%2Fryancallinan%2FDocuments%2Fapp.loopz.dev%20%2Fsrc%2Fapp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=%2FUsers%2Fryancallinan%2FDocuments%2Fapp.loopz.dev%20&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!")));
 module.exports = __webpack_exports__;
 
 })();
